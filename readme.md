@@ -1,4 +1,4 @@
-# AI-Powered Market Trend Analysis System v2
+# AI-Powered Market Trend Analysis System 
 
 ## Project Overview
 
