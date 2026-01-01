@@ -368,8 +368,3 @@ https://github.com/pratham07-8/ai-market-trend-analysis-v2
 3. Scikit-learn Documentation
 4. Hugging Face Transformers Library
 
----
-
-**Prepared by**: Pratham (BTech CSE, IITM)  
-**Date**: January 2026  
-**Version**: 2.0.0
