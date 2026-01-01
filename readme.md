@@ -1,275 +1,283 @@
-# AI-Powered Market Trend Analysis System 
+# 🚀 AI Market Trend Analysis Project
 
-## Project Overview
+A beginner-friendly machine learning project that predicts stock market trends using technical indicators and advanced ML algorithms.
 
-An advanced AI-powered system designed to analyze market data, predict product trends, forecast demand, and segment customer behavior using machine learning and deep learning techniques. This v2 implementation features an improved modular architecture, enhanced forecasting models, and interactive dashboards.
+📄 **Project Report**:  
+📊 **Live Dashboard**: [Launch Dashboard](https://ai-market-trend-analysis-v5.streamlit.app/)  
+🎥 **Video Demo & Presentation**: 
 
-## 🎯 Key Features
+## 📋 Table of Contents
 
-### 1. Market Data Analysis
-- **Product Trend Detection**: Identify rising and falling product trends using time-series analysis
-- **Customer Segmentation**: Cluster customers based on purchase behavior and demographics
-- **Pricing Pattern Analysis**: Understand price elasticity and demand sensitivity
-- **Anomaly Detection**: Detect unusual spikes or drops in sales and prices
+- [Overview](#-overview)
+- [Features](#-features)
+- [Quick Start](#-quick-start)
+- [Project Structure](#-project-structure)
+- [Installation](#-installation)
+- [Model Performance](#-model-performance)
+- [Technical Details](#-technical-details)
+- [Disclaimer](#-disclaimer)
 
-### 2. Advanced Forecasting
-- **Prophet Time-Series Forecasting**: Seasonality-aware demand predictions
-- **LSTM Neural Networks**: Deep learning models for long-term trend predictions
-- **ARIMA Models**: Statistical forecasting for stable time-series data
-- **Ensemble Methods**: Combined predictions for improved accuracy
+## 🎯 Overview
 
-### 3. Interactive Dashboards
-- **Real-time Visualizations**: Plotly and Streamlit-based interactive charts
-- **Trend Heatmaps**: Visual representation of product performance across segments
-- **Predictive Graphs**: Sales forecasts with confidence intervals
-- **Custom Metrics**: Key performance indicators tailored to business needs
+This project demonstrates how to build an end-to-end AI system for stock market trend prediction. It's designed for beginners but includes advanced techniques that make it suitable for learning and real-world applications.
 
-### 4. NLP Integration
-- **Sentiment Analysis**: Extract insights from product reviews and social media
-- **BERT-based Models**: Advanced natural language processing
-- **Trend Extraction**: Identify emerging topics and keywords from text data
+**What it does:**
+- Collects real-time stock data from Yahoo Finance
+- Engineers 40+ technical indicators (RSI, MACD, Bollinger Bands, etc.)
+- Trains multiple ML models (Random Forest, XGBoost, Logistic Regression)
+- Provides an interactive web dashboard for predictions
+- Achieves 60%+ accuracy on market trend prediction
 
-## 🏗️ System Architecture v2
+**Target Audience:** Students, beginners in ML/Finance, and anyone interested in algorithmic trading
 
+## ✨ Features
+
+### 🔄 Data Collection
+- **Real-time data** from Yahoo Finance API
+- **Multiple stocks** support (AAPL, GOOGL, MSFT, AMZN, TSLA)
+- **Flexible time periods** (1Y, 2Y, 5Y, Max)
+- **Automatic data cleaning** and validation
+
+### 🔧 Feature Engineering
+- **40+ Technical Indicators**:
+  - Moving Averages (SMA, EMA)
+  - Momentum (RSI, ROC, Stochastic)
+  - Volatility (Bollinger Bands, ATR)
+  - Volume (OBV, VPT, PVT)
+  - Price Action patterns
+
+### 🤖 Machine Learning
+- **Multiple Models**: Random Forest, XGBoost, Logistic Regression
+- **Automatic Model Selection**: Best model chosen by cross-validation
+- **Class Balancing**: Handles imbalanced market data
+- **Feature Importance**: Understand which indicators matter most
+
+### 📊 Interactive Dashboard
+- **Real-time Predictions**: Live market trend forecasting
+- **Beautiful Visualizations**: Interactive charts with Plotly
+- **Model Insights**: Feature importance and performance metrics
+- **User-friendly Interface**: Built with Streamlit
+
+## 🚀 Quick Start
+
+### 1. Clone & Setup
+```bash
+git clone https://github.com/23f2000792/ai-market-trend-analysis
+cd ai-market-trend-analysis
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
 ```
-┌─────────────────────────────────────────────────────────┐
-│                    Data Ingestion Layer                  │
-│  (CSV, APIs, Google Trends, Yahoo Finance, Reviews)     │
-└──────────────────────┬──────────────────────────────────┘
-                       │
-┌──────────────────────▼──────────────────────────────────┐
-│                Data Processing Layer                     │
-│  - Cleaning & Validation                                │
-│  - Feature Engineering                                  │
-│  - Normalization & Scaling                              │
-└──────────────────────┬──────────────────────────────────┘
-                       │
-        ┌──────────────┼──────────────┐
-        │              │              │
-┌───────▼──────┐ ┌────▼─────┐ ┌──────▼──────┐
-│   Trend      │ │Segmentation│ │  Sentiment  │
-│  Analysis    │ │  Models    │ │  Analysis   │
-└───────┬──────┘ └────┬─────┘ └──────┬──────┘
-        │              │              │
-        └──────────────┼──────────────┘
-                       │
-┌──────────────────────▼──────────────────────────────────┐
-│              AI/ML Prediction Layer                      │
-│  - Prophet, LSTM, ARIMA, Random Forest, XGBoost        │
-└──────────────────────┬──────────────────────────────────┘
-                       │
-┌──────────────────────▼──────────────────────────────────┐
-│             Evaluation & Validation Layer                │
-│  - Metrics: RMSE, MAE, Accuracy, F1-Score              │
-│  - Cross-validation, Backtesting                        │
-└──────────────────────┬──────────────────────────────────┘
-                       │
-┌──────────────────────▼──────────────────────────────────┐
-│            Visualization & Dashboard Layer               │
-│  - Interactive Streamlit Dashboard                      │
-│  - Plotly Charts, Heatmaps, Predictions                │
-│  - Real-time Metrics and KPIs                          │
-└─────────────────────────────────────────────────────────┘
+
+### 2. Collect Data (Week 1)
+```bash
+python data_collector.py
 ```
+This downloads 5 years of stock data for major tech companies.
+
+### 3. Engineer Features (Week 2)
+```bash
+python feature_engineer.py
+```
+Creates 40+ technical indicators from raw price data.
+
+### 4. Train Models (Week 3)
+```bash
+python model_trainer.py
+```
+Trains and evaluates multiple ML models, saves the best one.
+
+### 5. Launch Dashboard (Week 4)
+```bash
+streamlit run streamlit_app/app.py
+```
+Opens interactive web dashboard at `http://localhost:8501`
 
 ## 📁 Project Structure
 
 ```
-ai-market-trend-analysis-v2/
-├── notebooks/
-│   ├── 01_data_exploration.ipynb          # EDA and data analysis
-│   ├── 02_feature_engineering.ipynb       # Feature creation
-│   ├── 03_trend_analysis.ipynb            # Product trend detection
-│   ├── 04_forecasting.ipynb               # Demand prediction models
-│   ├── 05_segmentation.ipynb              # Customer clustering
-│   └── 06_sentiment_analysis.ipynb        # NLP on reviews
-├── src/
-│   ├── __init__.py
-│   ├── data_processor.py                  # Data cleaning & preprocessing
-│   ├── feature_engineer.py                # Feature engineering functions
-│   ├── trend_detector.py                  # Trend analysis module
-│   ├── forecaster.py                      # Forecasting models
-│   ├── segmentation.py                    # Clustering algorithms
-│   ├── sentiment_analyzer.py              # NLP sentiment analysis
-│   └── visualizer.py                      # Visualization utilities
-├── models/
-│   ├── prophet_model.pkl                  # Trained Prophet model
-│   ├── lstm_model.h5                      # LSTM neural network
-│   ├── kmeans_clusters.pkl                # KMeans clustering model
-│   └── sentiment_model.pkl                # Sentiment classifier
-├── data/
-│   ├── raw/                               # Original datasets
-│   ├── processed/                         # Cleaned datasets
-│   └── predictions/                       # Model outputs
-├── dashboards/
-│   ├── app.py                             # Main Streamlit app
-│   ├── pages/
-│   │   ├── trends.py                      # Trend visualization page
-│   │   ├── forecasts.py                   # Predictions page
-│   │   ├── segments.py                    # Customer segments page
-│   │   └── sentiment.py                   # Sentiment insights page
-│   └── assets/                            # Images, CSS
-├── tests/
-│   ├── test_data_processor.py
-│   ├── test_forecaster.py
-│   └── test_segmentation.py
-├── docs/
-│   ├── ARCHITECTURE.md                    # Detailed system design
-│   ├── API.md                             # API documentation
-│   └── DEPLOYMENT.md                      # Deployment guide
-├── requirements.txt                       # Python dependencies
-├── setup.py                               # Package setup
-├── config.yaml                            # Configuration file
-└── README.md                              # This file
+ai-market-trend-analysis/
+│
+├── 📂 data/
+│   ├── raw/                 # Raw stock data (CSV files)
+│   └── features/            # Processed data with technical indicators
+│
+├── 📂 models/
+│   ├── *.pkl               # Trained ML models
+│   ├── scaler.pkl          # Feature scaler
+│   ├── model_metadata.json # Model performance info
+│   └── feature_importance.csv
+│
+├── 📂 notebooks/           # Jupyter notebooks for exploration
+│   └── 01_data_exploration.ipynb
+│
+├── 📂 streamlit_app/       # Interactive dashboard
+│   └── app.py
+│
+├── 📂 src/                 # Core modules
+│   ├── data_collector.py   # Stock data collection
+│   ├── feature_engineer.py # Technical indicators
+│   └── model_trainer.py    # ML model training
+│
+├── 📋 requirements.txt     # Python dependencies
+├── 📚 README.md           # This file
+└── 🚀 setup.py            # Installation script
 ```
 
-## 🔧 Installation & Setup
+## 🛠 Installation
 
 ### Prerequisites
-- Python 3.8+
+- Python 3.8+ (recommended: 3.9 or 3.10)
 - Git
-- Virtual Environment (recommended)
+- Internet connection (for data fetching)
 
-### Steps
+### Step-by-Step Installation
 
+1. **Clone the repository**
 ```bash
-# Clone the repository
-git clone https://github.com/pratham07-8/ai-market-trend-analysis-v2.git
-cd ai-market-trend-analysis-v2
+git clone https://github.com/pratham07-8/ai-market-trend-analysis
+cd ai-market-trend-analysis
+```
 
-# Create virtual environment
+2. **Create virtual environment**
+```bash
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run the Streamlit dashboard
-streamlit run dashboards/app.py
 ```
 
-## 📊 Datasets
-
-The system supports multiple data sources:
-
-1. **Kaggle**: Retail Sales, E-commerce, Market Data
-2. **APIs**: Google Trends, Yahoo Finance, Social Media
-3. **Custom CSVs**: Your own product and sales data
-4. **Synthetic Data**: Generated for testing and demos
-
-## 🤖 AI/ML Techniques Used
-
-| Technique | Use Case | Library |
-|-----------|----------|----------|
-| Time-Series Forecasting | Demand prediction | Prophet, statsmodels |
-| LSTM Networks | Long-term trends | TensorFlow/Keras |
-| K-Means Clustering | Customer segmentation | scikit-learn |
-| Isolation Forest | Anomaly detection | scikit-learn |
-| Random Forest | Feature importance | scikit-learn |
-| BERT | Sentiment analysis | Hugging Face Transformers |
-| XGBoost | Classification tasks | xgboost |
-
-## 📈 Model Performance Metrics
-
-### Forecasting Models
-- **Prophet RMSE**: ~8-12% of average sales
-- **LSTM MAE**: Competitive with Prophet for seasonal data
-- **ARIMA**: Best for stable, non-trending data
-
-### Segmentation
-- **K-Means Silhouette Score**: 0.65-0.75
-- **Davies-Bouldin Index**: Optimized for cluster quality
-
-### Sentiment Analysis
-- **BERT Accuracy**: 90%+ on product reviews
-- **F1-Score**: 0.88-0.92 across sentiment classes
-
-## 🚀 Usage Examples
-
-### Run the Dashboard
+3. **Activate virtual environment**
 ```bash
-streamlit run dashboards/app.py
+# On Windows
+venv\Scripts\activate
+
+# On macOS/Linux
+source venv/bin/activate
 ```
 
-### Use Python API
+4. **Install dependencies**
+```bash
+pip install -r requirements.txt
+```
+
+## 📊 Model Performance
+
+### Default Performance (5-year data, 5 stocks)
+
+| Model | Accuracy | F1-Score | Training Time | Notes |
+|-------|----------|----------|---------------|-------|
+| **Random Forest** | 64.2% | 0.639 | 2.3s | Most balanced performance |
+| **XGBoost** | 66.1% | 0.658 | 5.7s | Highest accuracy |
+| **Logistic Regression** | 61.8% | 0.612 | 0.8s | Fastest training |
+
+### Key Metrics
+- **Precision**: 62-68% across all classes
+- **Recall**: 58-71% (varies by market condition)
+- **Cross-validation**: 5-fold CV with stratified sampling
+- **Class Balance**: Down(35%), Stable(30%), Up(35%)
+
+### Feature Importance (Top 10)
+1. RSI_14 (0.124) - Momentum indicator
+2. SMA_Ratio_5_20 (0.089) - Trend strength
+3. MACD_Histogram (0.076) - Momentum divergence
+4. BB_Position (0.071) - Volatility position
+5. Volume_Ratio (0.068) - Volume confirmation
+6. Price_to_SMA50 (0.063) - Long-term trend
+7. ATR (0.059) - Volatility measure
+8. Stoch_K (0.057) - Overbought/oversold
+9. ROC_10 (0.054) - Price momentum
+10. EMA_12 (0.051) - Short-term trend
+
+## 🔬 Technical Details
+
+### Data Pipeline
+1. **Collection**: Yahoo Finance API → Raw OHLCV data
+2. **Cleaning**: Handle missing values, outliers, stock splits
+3. **Feature Engineering**: Create 40+ technical indicators
+4. **Preprocessing**: Scale features, encode targets
+5. **Training**: Multiple models with cross-validation
+6. **Evaluation**: Comprehensive metrics and validation
+
+### Technical Indicators Implemented
+
+#### Trend Indicators
+- Simple Moving Average (SMA): 5, 10, 20, 50, 200 periods
+- Exponential Moving Average (EMA): 12, 26, 50 periods
+- Moving Average Ratios and Cross-overs
+
+#### Momentum Indicators
+- Relative Strength Index (RSI): 14-period
+- Rate of Change (ROC): 5, 10, 20 periods
+- MACD: Standard 12-26-9 configuration
+- Stochastic Oscillator: %K and %D
+
+#### Volatility Indicators
+- Bollinger Bands: 20-period with 2 standard deviations
+- Average True Range (ATR): 14-period
+- Historical Volatility: 10 and 30-day annualized
+
+#### Volume Indicators
+- On Balance Volume (OBV)
+- Volume Price Trend (VPT)
+- Price Volume Trend (PVT)
+- Volume Moving Averages and Ratios
+
+### Model Architecture
+
+#### Random Forest (Default Best)
 ```python
-from src.forecaster import ProphetForecaster
-from src.segmentation import CustomerSegmenter
-
-# Load data
-data = pd.read_csv('data/sales.csv')
-
-# Forecast demand
-forecaster = ProphetForecaster(data)
-forecasts = forecaster.predict(periods=30)
-
-# Segment customers
-segmenter = CustomerSegmenter(data)
-segments = segmenter.fit_predict()
+RandomForestClassifier(
+    n_estimators=100,
+    max_depth=10,
+    min_samples_split=5,
+    min_samples_leaf=2,
+    random_state=42
+)
 ```
 
-## 📝 Evaluation & Validation
+#### XGBoost (Highest Accuracy)
+```python
+XGBClassifier(
+    n_estimators=100,
+    max_depth=6,
+    learning_rate=0.1,
+    random_state=42
+)
+```
 
-- **Train-Test Split**: 80-20 for model evaluation
-- **Cross-Validation**: 5-fold CV for robustness
-- **Backtesting**: Historical validation on past data
-- **A/B Testing**: Compare model predictions with actual outcomes
+## 📚 Learning Resources
+### APIs and Data Sources
+- [Yahoo Finance API](https://pypi.org/project/yfinance/)
+- [Alpha Vantage](https://www.alphavantage.co/)
+- [Quandl](https://www.quandl.com/)
 
-## 🔒 Ethical Considerations
+## 🚨 Disclaimer
 
-- **Bias Mitigation**: Balanced datasets across customer segments
-- **Data Privacy**: No PII stored; anonymous aggregation
-- **Responsible AI**: Explainability via SHAP values
-- **Fairness**: Regular audits for algorithmic bias
+**IMPORTANT: This project is for educational purposes only.**
 
-## 📚 Learning Outcomes
+- 📚 **Educational Tool**: Designed for learning ML and financial analysis
+- ❌ **Not Financial Advice**: Do not use for actual trading decisions
+- 📊 **Historical Performance**: Past results don't guarantee future performance
+- 🎯 **Accuracy Limitations**: 60-70% accuracy is good for education, not trading
+- 💰 **Risk Warning**: Financial markets involve substantial risk of loss
+- 👨‍💼 **Professional Advice**: Consult qualified financial advisors for investment decisions
 
-✓ End-to-end ML pipeline development
-✓ Time-series forecasting with Prophet and LSTM
-✓ Customer segmentation and clustering
-✓ Sentiment analysis with transformers
-✓ Interactive dashboard development with Streamlit
-✓ Model evaluation and optimization
-✓ Production-ready code practices
-
-## 🎓 Technologies & Libraries
-
-- **Data**: pandas, numpy, polars
-- **ML**: scikit-learn, XGBoost, LightGBM
-- **DL**: TensorFlow, Keras, PyTorch
-- **NLP**: Hugging Face Transformers, NLTK, spaCy
-- **Visualization**: Plotly, Seaborn, Matplotlib
-- **Dashboard**: Streamlit, Dash
-- **Forecasting**: Prophet, statsmodels
-- **Utilities**: Jupyter, pytest, logging
-
-## 📄 Documentation
-
-- [System Architecture](docs/ARCHITECTURE.md) - Detailed design decisions
-- [API Documentation](docs/API.md) - Function and class references
-- [Deployment Guide](docs/DEPLOYMENT.md) - Production setup
-
-## 🤝 Contributing
-
-Contributions are welcome! Please:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit changes (`git commit -m 'Add amazing feature'`)
-4. Push to branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+### Legal Notice
+The authors and contributors are not responsible for any financial losses incurred from using this software. Always perform your own research and risk assessment before making investment decisions.
 
 ## 📄 License
 
-This project is licensed under the MIT License - see LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## ✨ Acknowledgments
+## 🙏 Acknowledgments
 
-- Facebook's Prophet team for forecasting tools
-- Hugging Face for transformer models
-- Streamlit for dashboard framework
-- Kaggle for public datasets
-- IITM Online for project guidelines
+- **Yahoo Finance** for free financial data API
+- **Streamlit** for making beautiful web apps simple
+- **scikit-learn** for excellent ML library
+- **Plotly** for interactive visualizations
+- **pandas-ta** for technical analysis indicators
+
+
+
+---
 
 ## 📞 Contact & Support
 
@@ -277,8 +285,3 @@ This project is licensed under the MIT License - see LICENSE file for details.
 **Email**: prathamchouhan824@gmail.com  
 **GitHub**: https://github.com/pratham07-8
 
----
-
-**Last Updated**: January 2026  
-**Version**: 2.0.0  
-**Status**: Active Development
