@@ -2,7 +2,7 @@
 
 A beginner-friendly machine learning project that predicts stock market trends using technical indicators and advanced ML algorithms.
 
-📄 **Project Report**:  
+📄 **Project Report**:  [PROJECT_REPORT](file:///C:/Users/PRATHAM/Downloads/Detailed_Final_Report%20(3).pdf)
 📊 **Live Dashboard**:[Launch Dashboard](https://ai-market-trend-analysis-pratham.streamlit.app/)
 
 🎥 **Video Demo & Presentation**: 
