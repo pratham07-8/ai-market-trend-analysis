@@ -63,7 +63,7 @@ This project demonstrates how to build an end-to-end AI system for stock market 
 
 ### 1. Clone & Setup
 ```bash
-git clone https://github.com/23f2000792/ai-market-trend-analysis
+git clone https://github.com/pratham07-8/ai-market-trend-analysis
 cd ai-market-trend-analysis
 python -m venv venv
 venv\Scripts\activate
@@ -92,7 +92,7 @@ Trains and evaluates multiple ML models, saves the best one.
 ```bash
 streamlit run streamlit_app/app.py
 ```
-Opens interactive web dashboard at `http://localhost:8501`
+Opens interactive web dashboard at `http://localhost:8503`
 
 ## 📁 Project Structure
 
