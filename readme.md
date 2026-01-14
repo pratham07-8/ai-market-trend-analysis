@@ -1,4 +1,4 @@
-# 🚀 AI Market Trend Analysis Project
+# 🚀 AI Stock Market Trend Analysis Project
 
 A beginner-friendly machine learning project that predicts stock market trends using technical indicators and advanced ML algorithms.
 
