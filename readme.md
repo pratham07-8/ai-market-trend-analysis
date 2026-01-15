@@ -1,4 +1,4 @@
-# 🚀 AI Stock Market Trend Analysis Project
+# 🚀 AI Market Trend Analysis Project
 
 A beginner-friendly machine learning project that predicts stock market trends using technical indicators and advanced ML algorithms.
 
@@ -6,7 +6,7 @@ A beginner-friendly machine learning project that predicts stock market trends u
 
 📊 **Live Dashboard**:[Launch Dashboard](https://ai-market-trend-analysis-pratham.streamlit.app/)
 
-🎥 **Video Demo & Presentation**: 
+🎥 **Video Demo & Presentation**: [Watch demo](https://drive.google.com/file/d/1_xTMz6ef5Fy_YuRwX983AbPIpSV52GO3/view?usp=sharing)
 
 ## 📋 Table of Contents
 
